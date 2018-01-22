@@ -64,27 +64,19 @@ def get_errors():
     db = psycopg2.connect(database=DBNAME)
     file = open("test.txt", "a")
     cursor = db.cursor()
+    file.write("On which days did more than 1% of requests lead to errors?\n")
     cursor.execute('''
     drop view if exists total_status;
-    ''')
-    cursor.execute('''
     drop view if exists errors;
-    ''')
-    cursor.execute('''
     create view total_status as
     select to_char(time,'FMMonth DD,YYYY') as t, count(status) as num
     from log
     group by t;
-    ''')
-    cursor.execute('''
     create view errors as
     select to_char(time,'FMMonth DD,YYYY') as t, count(status) as num
     from log
     where status != '200 OK'
     group by t;
-    ''')
-    file.write("On which days did more than 1% of requests lead to errors?\n")
-    cursor.execute('''
     select total_status.t, round((errors.num::float * 100 / \
     total_status.num::float)::numeric,2)
     from total_status, errors
@@ -94,7 +86,7 @@ def get_errors():
     for error in errors:
         status = error[0]
         percent = error[1]
-        file.write('{} - {} views\n'.format(status, percent))
+        file.write('{} - {} %\n'.format(status, percent))
     file.close()
     db.close()
     return errors
