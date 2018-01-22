@@ -1,0 +1,57 @@
+What are the most popular three articles of all time?
+candidate-is-jerk - 338647 views
+bears-love-berries - 253801 views
+bad-things-gone - 170098 views
+What are the most popular authors of all time
+Ursula La Multa - 507594 views
+Rudolf von Treppenwitz - 423457 views
+Anonymous Contributor - 170098 views
+Markoff Chaney - 84557 views
+On which days did more than 1% of requests lead to errors?
+July 01,2016 - 1.04 views
+July 01,2016 - 1.11 views
+July 01,2016 - 1.06 views
+July 01,2016 - 1.12 views
+July 01,2016 - 1.09 views
+July 01,2016 - 1.05 views
+July 01,2016 - 1.04 views
+July 01,2016 - 1.09 views
+July 01,2016 - 1.01 views
+July 01,2016 - 1.03 views
+July 01,2016 - 1.01 views
+July 01,2016 - 1.02 views
+July 01,2016 - 1.02 views
+July 01,2016 - 1.08 views
+July 01,2016 - 3.27 views
+July 01,2016 - 1.08 views
+July 01,2016 - 1.05 views
+July 02,2016 - 2.29 views
+July 03,2016 - 2.31 views
+July 04,2016 - 2.30 views
+July 05,2016 - 2.32 views
+July 06,2016 - 2.31 views
+July 07,2016 - 2.31 views
+July 08,2016 - 2.30 views
+July 09,2016 - 2.29 views
+July 10,2016 - 2.32 views
+July 11,2016 - 2.32 views
+July 12,2016 - 2.31 views
+July 13,2016 - 2.29 views
+July 14,2016 - 2.29 views
+July 15,2016 - 2.30 views
+July 16,2016 - 2.32 views
+July 17,2016 - 2.26 views
+July 18,2016 - 2.28 views
+July 19,2016 - 2.29 views
+July 20,2016 - 2.32 views
+July 21,2016 - 2.29 views
+July 22,2016 - 2.29 views
+July 23,2016 - 2.30 views
+July 24,2016 - 2.30 views
+July 25,2016 - 2.32 views
+July 26,2016 - 2.33 views
+July 27,2016 - 2.32 views
+July 28,2016 - 2.31 views
+July 29,2016 - 2.30 views
+July 30,2016 - 2.30 views
+July 31,2016 - 2.76 views
