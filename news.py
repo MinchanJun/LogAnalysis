@@ -21,11 +21,13 @@ def get_popular_articles():
     ''')
     articles = cursor.fetchall()
     file.write("What are the most popular three articles of all time?\n")
+    print("What are the most popular three articles of all time?\n")
     # Get three popular articles by address and number of views
     for article in articles:
         address = article[0]
         views = article[1]
         file.write('{} - {} views\n'.format(address, views))
+        print('{} - {} views'.format(address, views))
     file.close()
     db.close()
     return articles
@@ -47,11 +49,13 @@ def get_popular_authors():
     order by count(l.ip) desc
     ''')
     authors = cursor.fetchall()
-    file.write("\nWhat are the most popular authors of all time\n")
+    file.write("\nWhat are the most popular authors of all time?\n")
+    print("\nWhat are the most popular authors of all time?\n")
     for author in authors:
         name = author[0]
         views = author[1]
         file.write('{} - {} views\n'.format(name, views))
+        print('{} - {} views'.format(name, views))
     file.close()
     db.close()
     return authors
@@ -66,6 +70,7 @@ def get_errors():
     file = open("test.txt", "a")
     cursor = db.cursor()
     file.write("\nOn which days did more than 1% of requests lead to errors?\n")
+    print("\nOn which days did more than 1% of requests lead to errors?\n")
     cursor.execute('''
     select total_status.t, round((errors.num::float * 100 / \
     total_status.num::float)::numeric,2)
@@ -78,6 +83,7 @@ def get_errors():
         status = error[0]
         percent = error[1]
         file.write('{} - {} %\n'.format(status, percent))
+        print('{} - {} %'.format(status, percent))
     file.close()
     db.close()
     return errors
