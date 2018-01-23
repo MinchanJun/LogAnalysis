@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import psycopg2
 DBNAME = "news"
 
@@ -69,7 +70,8 @@ def get_errors():
     select total_status.t, round((errors.num::float * 100 / \
     total_status.num::float)::numeric,2)
     from total_status, errors
-    where total_status.t = errors.t and (errors.num::float * 100 / total_status.num::float) > 1;
+    where total_status.t = errors.t and \
+    (errors.num::float * 100 / total_status.num::float) > 1;
     ''')
     errors = cursor.fetchall()
     for error in errors:
