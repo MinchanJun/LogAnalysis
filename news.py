@@ -66,21 +66,10 @@ def get_errors():
     cursor = db.cursor()
     file.write("On which days did more than 1% of requests lead to errors?\n")
     cursor.execute('''
-    drop view if exists total_status;
-    drop view if exists errors;
-    create view total_status as
-    select to_char(time,'FMMonth DD,YYYY') as t, count(status) as num
-    from log
-    group by t;
-    create view errors as
-    select to_char(time,'FMMonth DD,YYYY') as t, count(status) as num
-    from log
-    where status != '200 OK'
-    group by t;
     select total_status.t, round((errors.num::float * 100 / \
     total_status.num::float)::numeric,2)
     from total_status, errors
-    where (errors.num::float * 100 / total_status.num::float) > 1;
+    where total_status.t = errors.t and (errors.num::float * 100 / total_status.num::float) > 1;
     ''')
     errors = cursor.fetchall()
     for error in errors:
@@ -95,3 +84,17 @@ def get_errors():
 get_popular_articles()
 get_popular_authors()
 get_errors()
+
+'''
+drop view if exists total_status;
+drop view if exists errors;
+create view total_status as
+select to_char(time,'FMMonth DD,YYYY') as t, count(status) as num
+from log
+group by t;
+create view errors as
+select to_char(time,'FMMonth DD,YYYY') as t, count(status) as num
+from log
+where status != '200 OK'
+group by t;
+'''
