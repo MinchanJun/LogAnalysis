@@ -32,6 +32,7 @@ def get_popular_articles():
     db.close()
     return articles
 
+
 '''
 Method that gets popular articles of all time from news database
 '''
@@ -59,6 +60,7 @@ def get_popular_authors():
     file.close()
     db.close()
     return authors
+
 
 '''
 Medthod that shows errors of log in the news database
