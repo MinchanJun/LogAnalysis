@@ -69,7 +69,8 @@ def get_errors():
     db = psycopg2.connect(database=DBNAME)
     file = open("test.txt", "a")
     cursor = db.cursor()
-    file.write("\nOn which days did more than 1% of requests lead to errors?\n")
+    file.write("\nOn which days did more \
+    than 1% of requests lead to errors?\n")
     print("\nOn which days did more than 1% of requests lead to errors?\n")
     cursor.execute('''
     select total_status.t, round((errors.num::float * 100 / \
