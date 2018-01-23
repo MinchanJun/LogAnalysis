@@ -76,11 +76,29 @@ Anonymous Contributor — 1023 views
     Example:
 July 29, 2016 — 2.5% errors
 
+### To run news.py file properly
+1. This query has to be run before you run this file.
 
+        CREATE VIEW total_status AS
+        SELECT TO_CHAR(time, 'FMMonth DD,YYYY') AS t, COUNT(status) AS num
+        FROM log
+        GROUP BY t;
+
+        CREATE VIEW errors AS
+        SELECT TO_CHAR(time, 'FMMonth DD,YYYY') AS t, COUNT(status) AS num
+        FROM log
+        WHERE status != '200 OK'
+        GROUP BY t;
+
+    First query counts all the status in log and displayed in an order by dates. Second query counts all the error status in log and displayed in an order by dates Make sure these two queries are executed before you run this file. This is necessary for question 3 to have output. If you made a mistake, please drop those queries again re-run it.
+
+        drop view if exists total_status;
+        drop view if exists errors;
 
 ### Run
     python news.py
 Once you run this file, you will see a text file that is generated from news.py. Open the file and check the result of execution of queries.
+
 ## Authors
 Minchan Jun
 
